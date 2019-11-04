@@ -35,11 +35,13 @@ class DoctorController extends Controller
     public function update(Request $request, Doctor $doctor)
     {
         $data = $request->all();
+        if (count($data['expertises']) >= 2 ) {
 
-        $doctor->update($data);
+            $doctor->update($data);
 
-        $doctor->expertises()->sync($data['expertises']);
+            $doctor->expertises()->sync($data['expertises']);
 
+        }
         return $doctor;
     }
 

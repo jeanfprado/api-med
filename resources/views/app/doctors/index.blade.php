@@ -186,8 +186,12 @@
                     expertises : $("#expertises").val()
                 },
                   success: function (data) {
-                     alert('Registro salvo');
-                     console.log(data);
+                      if(data) {
+                        alert('Registro salvo');
+                      }else {
+                        alert('Ocorreu um erro!');
+                      }
+                      location.reload();
 
                 }, error: function (data) {
                     if(data.status == 401){
@@ -218,6 +222,11 @@
                         expertises : $("#expertises").val()
                     },
                   success: function (data) {
+                    if(data) {
+                        alert('Registro salvo');
+                      }else {
+                        alert('Ocorreu um erro!');
+                      }
                      location.reload();
                 }, error: function (data) {
                     if(data.status == 401){
